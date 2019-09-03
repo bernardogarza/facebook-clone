@@ -1,4 +1,7 @@
 <% posts.each do |post| %>
     <%= post.body %><br>
-    <%= link_to  "Delete", post_path(post.id), method: :delete %><br><br>
+    <% if current_user == post.user %>
+        <%= link_to  "Delete", post_path(post.id), method: :delete %> | 
+        <%= link_to  "Edit", edit_post_path(post.id) %><br><br>
+    <% end %>
 <% end %>
