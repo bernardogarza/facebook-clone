@@ -1,0 +1,4 @@
+<% posts.each do |post| %>
+    <%= post.body %><br>
+    <%= link_to  "Delete", post_path(post.id), method: :delete %><br><br>
+<% end %>

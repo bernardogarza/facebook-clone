@@ -1,2 +1,5 @@
-<h1>Homes#index</h1>
-<p>Find me in app/views/homes/index.html.erb</p>
+<h1>Welcome <%= current_user.full_name %></h1>
+
+<%= render  "posts/post_form" %><br>
+<%= render  "posts/all_posts", posts: @posts%>
+
