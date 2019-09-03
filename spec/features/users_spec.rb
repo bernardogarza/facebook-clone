@@ -24,7 +24,7 @@ RSpec.feature "Users", type: :feature do
 
       scenario 'Log in' do
         visit new_user_session_path
-        User.create(first_name: 'Foo', last_name: 'Bar', email: 'foo@bar.com', )
+        User.create(first_name: 'Foo', last_name: 'Bar', email: 'foo@bar.com', password: '123456', password_confirmation: '123456')
         within('form') do
           fill_in 'Email', with: 'foo@bar.com'
           fill_in 'Password', with: '123456'
