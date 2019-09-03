@@ -1,24 +1,37 @@
-# README
+# Facebook Clone
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the sample application for Microverse main curriculum
 
-Things you may want to cover:
 
-* Ruby version
+## Authors
+Bernardo Garza Landa - bernardo.g.landa@gmail.com
 
-* System dependencies
 
-* Configuration
+Kalib Hackin - naguihw@gmail.com
 
-* Database creation
 
-* Database initialization
+## Getting started
 
-* How to run the test suite
+To get started with the app, clone the repo and then install the needed gems:
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ bundle install --without production
+```
 
-* Deployment instructions
+Next, create the database:
 
-* ...
+```
+$ rails db:create
+```
+
+Next, migrate the database:
+
+```
+$ rails db:migrate
+```
+
+Ready to run the app in a local server:
+
+```
+$ rails server
+```
