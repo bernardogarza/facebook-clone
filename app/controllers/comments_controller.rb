@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
         post = Post.find(params[:post_id])
         comment = post.comments.build(comment_params.merge(user: current_user))
         if comment.save
-            flash[:notice] = 'You comment was successfully posted'
+            flash[:notice] = 'Your comment was successfully posted'
             redirect_back(fallback_location: root_path)
         else
             flash[:error] = @post.errors.full_messages
@@ -12,7 +12,10 @@ class CommentsController < ApplicationController
     end
 
     def destroy
-    
+        comment = Comment.find(params[:id])
+        comment.destroy
+        redirect_back(fallback_location: root_path)
+        flash[:notice] = "Comment successfully deleted"
     end
 
     private

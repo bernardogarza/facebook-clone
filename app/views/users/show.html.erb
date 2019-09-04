@@ -1,11 +1,2 @@
 <h1><%= @user.full_name %>'s Profile</h1>
-<!-- <% if current_user == @user %>
-  
-<% else %>
-    <% @posts.each do |post| %>
-        <%= post.body %><br>
-        <%= render  "likes/like_unlike", post: post %><br>
-    <% end %>
-<% end %> -->
-
 <%= render  "posts/all_posts", posts: @posts %>
