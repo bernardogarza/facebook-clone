@@ -1,5 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Comment, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'Testing Comment Model' do
+    let(:user) { create(:user) }
+
+    it 'Validating body' do
+      comment = user.comments.build(body: '')
+      expect(comment.save).to eq(false)
+    end
+  end
 end

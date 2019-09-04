@@ -3,7 +3,7 @@
         <%= link_to  comment.user.full_name, user_path(comment.user) %>:
         <%= comment.body %><br>
         <% if current_user == comment.user  %>
-            <%= link_to  "Delete comment", post_comment_path(comment, comment.id), method: :delete %>
+            <%= link_to  "Delete comment", post_comment_path(comment, comment.id), method: :delete %><br>
         <% end %>
     <%end%>
 <% end %>
