@@ -1,0 +1,7 @@
+<%  current_user.friend_requests.each do |friend| %>
+    <%= friend.full_name %> sent you a friend request<br>
+    <button><%= link_to  "Ignore", friendship_path(current_user) %></button>
+    <button><%= link_to  "Accept", friendship_path(current_user) %>
+    </button>
+<% end %>
+<h1>HELLO</h1>
