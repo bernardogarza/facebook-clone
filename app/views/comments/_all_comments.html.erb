@@ -1,0 +1,6 @@
+<% post.comments.each do |comment| %>
+    <% if comment.user %>
+        <%= comment.user.full_name %>:
+        <%= comment.body %><br>
+    <%end%>
+<% end %>

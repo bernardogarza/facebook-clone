@@ -15,6 +15,8 @@ class User < ApplicationRecord
 
   has_many :likes, dependent: :destroy
 
+  has_many :comments, dependent: :destroy
+
   def full_name
     "#{first_name.capitalize} #{last_name.capitalize}"
   end

@@ -7,4 +7,6 @@
     <% else %>
         <%= render  "likes/like_unlike", post: post %><br>
     <% end %>
+    <%= render  "comments/comment_form", post: post %><br>
+    <%= render  "comments/all_comments", post: post %><br>
 <% end %>

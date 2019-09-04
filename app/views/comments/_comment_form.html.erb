@@ -1,0 +1,4 @@
+<%= form_for(post.comments.build, url: post_comments_path(post)) do |f| %>
+    <%= f.text_area :body, placeholder: 'Put your comment...' %><br>
+    <%= f.submit 'Comment' %>
+<% end %>
