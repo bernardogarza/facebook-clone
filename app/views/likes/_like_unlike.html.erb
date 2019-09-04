@@ -1,5 +1,6 @@
 <% if current_user.likes.find_by(post_id: post) %>
     <%= link_to  "Unlike", post_like_path(post, post.id), method: :delete %>
 <% else %>
-    <%= link_to  "Like", post_likes_path(post), method: :post %>
+    <%= link_to  "Like", post_likes_path(post), method: :post %><br>
 <% end %>
+<b><%= pluralize(post.likes.count, "person") %> likes this post</b><br><br>
