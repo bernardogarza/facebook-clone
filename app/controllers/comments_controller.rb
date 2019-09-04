@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
             flash[:notice] = 'Your comment was successfully posted'
             redirect_back(fallback_location: root_path)
         else
-            flash[:error] = @post.errors.full_messages
+            flash[:error_comment] = comment.errors.full_messages
             redirect_back(fallback_location: root_path)
         end
     end
