@@ -13,6 +13,8 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true
   has_many :posts
 
+  has_many :likes
+
   def full_name
     "#{first_name.capitalize} #{last_name.capitalize}"
   end

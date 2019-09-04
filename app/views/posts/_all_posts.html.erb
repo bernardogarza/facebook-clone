@@ -2,6 +2,7 @@
     <%= post.body %><br>
     <% if current_user == post.user %>
         <%= link_to  "Delete", post_path(post.id), method: :delete %> | 
-        <%= link_to  "Edit", edit_post_path(post.id) %><br><br>
+        <%= link_to  "Edit", edit_post_path(post.id) %> | 
+        <%= render  "likes/like_unlike", post: post %><br><br>
     <% end %>
 <% end %>
