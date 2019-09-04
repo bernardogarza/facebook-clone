@@ -38,7 +38,7 @@ RSpec.feature "Users", type: :feature do
       expect(page).to have_content('Bar Foo')
     end
 
-    scenario 'Visi users profile' do
+    scenario 'Visit users profile' do
       log_in
       visit users_path
       click_on 'Bar Foo'

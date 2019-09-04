@@ -3,6 +3,7 @@ class PostsController < ApplicationController
         @post = current_user.posts.build(post_params)
         if @post.save
             redirect_back(fallback_location: root_path)
+            flash[:notice] = "Post successfully created"
         else
             flash[:error] = @post.errors.full_messages
             redirect_back(fallback_location: root_path)
@@ -12,7 +13,8 @@ class PostsController < ApplicationController
     def destroy
         @post = Post.find(params[:id])
 		@post.destroy
-		redirect_back(fallback_location: root_path)
+        redirect_back(fallback_location: root_path)
+        flash[:notice] = "Post successfully deleted"
     end
 
     def edit
@@ -24,7 +26,9 @@ class PostsController < ApplicationController
 
         if @post.update(post_params)
             redirect_to root_url
+            flash[:notice] = "Post successfully edited"
         else
+            flash[:error] = @post.errors.full_messages
             render 'edit'
         end
     end

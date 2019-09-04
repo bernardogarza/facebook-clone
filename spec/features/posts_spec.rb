@@ -14,14 +14,45 @@ RSpec.feature "Posts", type: :feature do
         click_button 'Log in'
       end
     }
-  
-    scenario 'Create a post' do
-      log_in
+
+    let(:create_post) {
       within('form') do
         fill_in 'post_body', with: 'This is a post'
         click_button 'Post'
       end
-      expect(page).to have_content('This is a post')
+    }
+  
+    scenario 'Create a post' do
+      log_in
+      create_post
+      expect(page).to have_content('Post successfully created')
+    end
+
+    scenario 'Should fail' do
+      log_in
+      within('form') do
+        fill_in 'post_body', with: ''
+        click_button 'Post'
+      end
+      expect(page).to have_content('Body can\'t be blank')
+    end
+
+    scenario 'Should delete the post' do
+      log_in
+      create_post
+      click_on 'Delete'
+      expect(page).to have_content('Post successfully deleted')
+    end
+
+    scenario 'Should edit the post' do
+      log_in
+      create_post
+      click_on 'Edit'
+      within('form') do
+        fill_in 'post_body', with: 'This is a post edit'
+        click_button 'Edit'
+      end
+      expect(page).to have_content('This is a post edit')
     end
   end
 end
