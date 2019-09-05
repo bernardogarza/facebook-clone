@@ -1,10 +1,7 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!
 	before_action :find_post, only: %i[destroy edit update]
-
-	def new
-	end
-
+	
 	def create
 		@post = current_user.posts.build(post_params)
 		if @post.save
