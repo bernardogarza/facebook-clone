@@ -4,7 +4,7 @@ class FriendshipsController < ApplicationController
     end
 
     def create
-        user = User.find(params[:user_id])
+        user = User.find(params[:friend_id])
         friend_request = current_user.friendships.build(friend: user).save
         redirect_back(fallback_location: root_path)
     end
