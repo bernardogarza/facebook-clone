@@ -1,2 +1,7 @@
 <h1><%= @user.full_name %>'s Profile</h1>
 <%= render  "posts/all_posts", posts: @posts %>
+
+<% @posts.each do |post| %>
+    <%= post.body %><br>
+    Created <%= time_ago_in_words(post.created_at) %> ago.<br><br>
+<% end %>
