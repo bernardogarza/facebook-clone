@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  root 'homes#index'
+  devise_scope :user do
+    root to: 'devise/sessions#new'
+  end
+  authenticated :user do
+    root 'homes#index'
+  end
+
   devise_for :users
   resources :posts, only: %i[create destroy edit update]
   resources :users, only: %i[index show]
