@@ -2,4 +2,5 @@
 
 <% @posts.each do |post| %>
     <%= post.body %><br>
+    Created <%= time_ago_in_words(post.created_at) %> ago.<br><br>
 <% end %>
