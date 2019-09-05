@@ -29,7 +29,7 @@ RSpec.feature "Users", type: :feature do
     scenario 'Log out success' do
       log_in
       click_on 'Log out'
-      expect(page).to have_content('You need to sign in or sign up before continuing')
+      expect(page).to have_content('Signed out successfully.')
     end
 
     scenario 'Show all users' do
