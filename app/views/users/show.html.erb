@@ -1,3 +1,12 @@
 <h1><%= @user.full_name %>'s Profile</h1>
 <%= link_to  "Send friend request", friendships_path(@user.id), method: :post %><br><br>
+
+<% if flash[:error_comment] %>
+<ul>
+    <% flash[:error_comment].each do |error| %>
+    <li>Comment <%= error %></li>
+    <% end %>
+</ul>
+<% end %>
+
 <%= render  "posts/all_posts", posts: @posts %>

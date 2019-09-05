@@ -1,5 +1,12 @@
 <h1>Welcome <%= current_user.full_name %></h1>
 
+<% if flash[:error_comment] %>
+    <ul>
+        <% flash[:error_comment].each do |error| %>
+            <li>Comment <%= error %></li>
+        <% end %>
+    </ul>
+<% end %>
+
 <%= render  "posts/post_form" %><br>
 <%= render  "posts/all_posts", posts: @posts%>
-

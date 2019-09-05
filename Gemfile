@@ -68,3 +68,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'hirb'
 gem 'devise'
+gem 'rspec'
+gem 'faker'
+gem 'factory_bot'
+gem 'omniauth-facebook'

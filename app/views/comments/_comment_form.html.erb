@@ -7,10 +7,3 @@
 <% if post.comments.count == 0 %>
     <br>This post doesn't have any comments.
 <% end %>
-<% if flash[:error_comment] %>
-    <ul>
-        <% flash[:error_comment].each do |error| %>
-            <li>Comment <%= error %></li>
-        <% end %>
-    </ul>
-<% end %>

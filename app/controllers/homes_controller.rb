@@ -1,5 +1,9 @@
 class HomesController < ApplicationController
   def index
-    @posts = current_user.posts
+    if user_signed_in?
+      @posts = current_user.posts.order('created_at DESC')
+    else
+      redirect_to new_user_session_path
+    end
   end
 end
