@@ -1,19 +1,21 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.feature "Users", type: :feature do
+RSpec.feature 'Users', type: :feature do
   context 'Tesing Users Controllers' do
-    let(:log_in) { 
+    let(:log_in) do
       visit new_user_session_path
       within('form') do
         fill_in 'Email', with: 'foo@bar.com'
         fill_in 'Password', with: '123456'
         click_button 'Log in'
       end
-    }
+    end
 
     before(:each) do
-      user = User.create(first_name: 'Foo', last_name: 'Bar', email: 'foo@bar.com', password: '123456', password_confirmation: '123456')
-      user2 = User.create(first_name: 'Bar', last_name: 'Foo', email: 'bar@foo.com', password: '123456', password_confirmation: '123456')
+      User.create(first_name: 'Foo', last_name: 'Bar', email: 'foo@bar.com', password: '123456', password_confirmation: '123456')
+      User.create(first_name: 'Bar', last_name: 'Foo', email: 'bar@foo.com', password: '123456', password_confirmation: '123456')
     end
 
     scenario 'It has to ask you to sign in or log in to access other parts of the site' do
@@ -29,7 +31,7 @@ RSpec.feature "Users", type: :feature do
     scenario 'Log out success' do
       log_in
       click_on 'Log out'
-      expect(page).to have_content('Signed out successfully.')
+      expect(page).to have_content('Signed out successfully')
     end
 
     scenario 'Show all users' do
