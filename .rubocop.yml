@@ -1,8 +1,17 @@
 Metrics/LineLength:
-  Max: 150
+  Max: 200
 
 Style/Documentation:
   Enabled: false
 
 Metrics/BlockLength:
   Max: 50
+
+Metrics/MethodLength:
+  Max: 15
+
+Style/MixinUsage:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
