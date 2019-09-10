@@ -1,12 +1,14 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.feature "Friendships", type: :feature do
+RSpec.feature 'Friendships', type: :feature do
   context 'Testing Friendships Controller' do
     before(:each) do
       User.create(first_name: 'Foo', last_name: 'Bar', email: 'foo@bar.com', password: '123456', password_confirmation: '123456')
       User.create(first_name: 'Bar', last_name: 'Foo', email: 'bar@foo.com', password: '123456', password_confirmation: '123456')
     end
-    
+
     let(:log_in) do
       visit new_user_session_path
       within('form') do
