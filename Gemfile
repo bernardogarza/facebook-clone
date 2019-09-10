@@ -73,3 +73,5 @@ gem 'hirb'
 gem 'omniauth-facebook'
 gem 'rspec'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+gem 'bulma-rails', '~> 0.7.5'
