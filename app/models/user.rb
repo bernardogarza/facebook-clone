@@ -2,10 +2,12 @@
 
 class User < ApplicationRecord
   before_save :downcase_email
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  devise :omniauthable, omniauth_providers: %i[facebook]
 
   validates :first_name, presence: true
   validates :last_name, presence: true
