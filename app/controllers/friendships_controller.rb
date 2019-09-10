@@ -12,16 +12,14 @@ class FriendshipsController < ApplicationController
         friendship = Friendship.find(params[:id])
         friendship.destroy
         redirect_back(fallback_location: root_path)
+        flash[:message] = "You ignored the friend request"
     end
 
     def update
         friendship = Friendship.find(params[:id])
         friendship.confirmed = true
         friendship.save
+        flash[:message] = "You and #{friendship.user.full_name} are friends now"
         redirect_back(fallback_location: root_path)
-    end
-
-    def show
-    
     end
 end

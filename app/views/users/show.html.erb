@@ -14,7 +14,7 @@
             <button><%= link_to  "Unfriend", friendship_path(@friendship.find_by(user: @user, friend: current_user, confirmed: true)), method: :delete %></button><br>
         <% end %>
     <% else %>
-        <%= link_to  "Send friend request", friendships_path(friend_id: @user), method: :post %><br><br>
+        <%= link_to  "Send Friend Request", friendships_path(friend_id: @user), method: :post %><br><br>
     <% end %>
 <% end %>
 

@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     resources :comments, only: %i[create destroy]
   end
   resources :users, only: %i[index show]
-  resources :friendships, only: %i[index show create destroy update]
+  resources :friendships, only: %i[index create destroy update]
 end

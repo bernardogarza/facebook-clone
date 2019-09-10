@@ -1,9 +1,12 @@
 <h1>Friend Requests</h1>
+<% if flash[:message] %>
+    <%= flash[:message] %>
+<% end %>
 <%  @friend_requests.each do |request| %>
     <% if request.friend == current_user && request.confirmed == false %>
         <%= request.user.full_name %> sent you a friend request<br>
-        <button><%= link_to  "Accept", friendship_path(request), method: :put %></button>
-        <button><%= link_to  "Ignore", friendship_path(request), method: :delete %></button><br>
+        <%= link_to  "Accept", friendship_path(request), method: :put %>
+        <%= link_to  "Ignore", friendship_path(request), method: :delete %><br>
     <% end %>
     <% if !current_user.friend_requests.any? %>
         <p>You don't have any friend requests</p>
