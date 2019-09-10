@@ -1,7 +1,8 @@
-<%  current_user.friend_requests.each do |friend| %>
-    <%= friend.full_name %> sent you a friend request<br>
-    <button><%= link_to  "Ignore", friendship_path(current_user) %></button>
-    <button><%= link_to  "Accept", friendship_path(current_user) %>
-    </button>
+<h1>Friend Requests</h1>
+<%  @friend_requests.each do |request| %>
+    <% if request.friend == current_user && request.confirmed == false %>
+        <%= request.user.full_name %> sent you a friend request<br>
+        <button><%= link_to  "Accept", friendship_path(request), method: :put %></button>
+        <button><%= link_to  "Ignore", friendship_path(request), method: :delete %></button><br>
+    <% end %>
 <% end %>
-<h1>HELLO</h1>
