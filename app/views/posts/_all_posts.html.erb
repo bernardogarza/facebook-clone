@@ -1,0 +1,6 @@
+<% posts.each do |post| %>
+    <%= post.body %><br>
+    Created <%= time_ago_in_words(post.created_at) %> ago.<br>
+    <%= link_to  "Delete", post_path(post.id), method: :delete %> | 
+    <%= link_to  "Edit", edit_post_path(post.id) %><br><br>
+<% end %>

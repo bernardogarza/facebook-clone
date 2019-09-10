@@ -1,0 +1,4 @@
+<h1>Welcome <%= current_user.full_name %></h1>
+
+<%= render  "posts/post_form" %><br>
+<%= render  "posts/all_posts", posts: @posts%>

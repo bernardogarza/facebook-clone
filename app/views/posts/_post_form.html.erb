@@ -1,0 +1,11 @@
+<%= form_for(:post, url: posts_path) do |f| %>
+    <%= f.text_area :body %><br>
+    <%= f.submit 'Post' %>
+<% end %>
+<% if flash[:error] %>
+    <ul>
+        <% flash[:error].each do |error| %>
+            <li><%= error %></li>
+        <% end %>
+    </ul>
+<% end %>
