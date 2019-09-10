@@ -13,11 +13,7 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
   validates :password, presence: true
   validates :password_confirmation, presence: true
-  has_many :posts, dependent: :destroy
-
-  has_many :likes, dependent: :destroy
-
-  has_many :comments, dependent: :destroy
+  has_many :posts
 
   def full_name
     "#{first_name.capitalize} #{last_name.capitalize}"

@@ -30,7 +30,7 @@ RSpec.feature 'Posts', type: :feature do
       expect(page).to have_content('Post successfully created')
     end
 
-    scenario 'Should fail to create a post' do
+    scenario 'Should fail' do
       log_in
       within('form') do
         fill_in 'post_body', with: ''
