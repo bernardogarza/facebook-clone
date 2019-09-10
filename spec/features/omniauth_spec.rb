@@ -1,21 +1,26 @@
 require 'rails_helper'
+
 OmniAuth.config.test_mode = true
 
-RSpec.feature "Omniauths", type: :feature do
-  context 'Testing Omniauth Log in' do
-    before do
-      OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new({
-        :provider => 'facebook',
-        :uid => '123545'
-      })
-    end
-    before do
-      Rails.application.env_config["devise.mapping"] = Devise.mappings[:user] # If using Devise
-      Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:twitter]
-    end
+OmniAuth.config.mock_auth[:facebook] = OmniAuth::AuthHash.new({
+  provider: 'facebook',
+  info: {
+    first_name: 'first',
+    last_name: 'last',
+    email: 'foo@bar.com'
+  }
+})
 
-    it "sets a session variable to the OmniAuth auth hash" do
-      User['uid'].expect == '123545'
-    end
+feature 'OmniAuth Signup' do
+
+  before do
+    Rails.application.env_config["devise.mapping"] = Devise.mappings[:user]
+    Rails.application.env_config["omniauth.auth"] = OmniAuth.config.mock_auth[:facebook]
+  end
+
+  scenario 'can sign up via facebook' do
+    visit '/'
+    click_link 'Sign in with Facebook'
+    expect(page).to have_content('Successfully authenticated from Facebook account.')
   end
 end
