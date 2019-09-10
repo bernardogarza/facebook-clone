@@ -5,4 +5,13 @@
         <button><%= link_to  "Accept", friendship_path(request), method: :put %></button>
         <button><%= link_to  "Ignore", friendship_path(request), method: :delete %></button><br>
     <% end %>
+    <% if !current_user.friend_requests.any? %>
+        <p>You don't have any friend requests</p>
+    <% end %>
+<% end %>
+<h1>Friend List</h1>
+<% current_user.friends.each do |f| %>
+    <ul>
+        <li><%= link_to  f.full_name, user_path(f) %></li>
+    </ul>
 <% end %>
