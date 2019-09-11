@@ -17,17 +17,17 @@
                 You already sent a friend request
             <% elsif @friendship.find_by(user: @user, friend: current_user, confirmed: false) %>
                 <%= @friendship.find_by(user: @user, friend: current_user).user.full_name %> sent you a friend request<br>
-                <button><%= link_to  "Accept", friendship_path(@friendship.find_by(user: @user, friend: current_user)), method: :put %></button>
-                <button><%= link_to  "Ignore", friendship_path(@friendship.find_by(user: @user, friend: current_user)), method: :delete %></button><br>
+                <%= link_to  "Accept", friendship_path(@friendship.find_by(user: @user, friend: current_user)), method: :put, class: "button is-success", style: "margin: 10px 0;" %>
+                <%= link_to  "Ignore", friendship_path(@friendship.find_by(user: @user, friend: current_user)), method: :delete, class: "button is-danger", style: "margin: 10px 0;" %><br>
             <% elsif current_user.friend?(@user) %>
-                You and <%= @user.full_name %> are friends.
+                You and <%= @user.full_name %> are friends.<br>
                 <% if @friendship.find_by(user: current_user, friend: @user, confirmed: true) %>
-                    <button><%= link_to  "Unfriend", friendship_path(@friendship.find_by(user: current_user, friend: @user, confirmed: true)), method: :delete %></button><br>
+                    <%= link_to  "Unfriend", friendship_path(@friendship.find_by(user: current_user, friend: @user, confirmed: true)), method: :delete, class: "button is-danger", style: "margin: 10px 0;" %><br>
                 <% else %>
-                    <button><%= link_to  "Unfriend", friendship_path(@friendship.find_by(user: @user, friend: current_user, confirmed: true)), method: :delete %></button><br>
+                    <%= link_to  "Unfriend", friendship_path(@friendship.find_by(user: @user, friend: current_user, confirmed: true)), method: :delete, class: "button is-danger", style: "margin: 10px 0;" %><br>
                 <% end %>
             <% else %>
-                <%= link_to  "Send Friend Request", friendships_path(friend_id: @user), method: :post %><br><br>
+                <%= link_to  "Send Friend Request", friendships_path(friend_id: @user), method: :post, class: "button is-success", style: "margin: 10px 0;" %><br><br>
             <% end %>
         <% end %>
 
