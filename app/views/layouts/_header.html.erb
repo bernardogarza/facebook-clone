@@ -1,6 +1,10 @@
 <% if user_signed_in? %>
     <%= link_to  "Facebook", root_url %>
     <%= link_to  "Users", users_path %>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
     <%= link_to  "My Profile", user_path(current_user) %>
+    <%= link_to  "Friends / Requests", friendships_path %> 
+    <% if current_user.friend_requests.any? %>
+        (<%= current_user.friend_requests.count %>)
+    <% end %>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
 <% end %>

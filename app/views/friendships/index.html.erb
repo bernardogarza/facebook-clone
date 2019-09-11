@@ -1,0 +1,24 @@
+<% if flash[:message] %>
+    <%= flash[:message] %>
+<% end %>
+<h1>Friend Requests</h1>
+<%  @friend_requests.each do |request| %>
+    <% if request.friend == current_user && request.confirmed == false %>
+        <%= request.user.full_name %> sent you a friend request<br>
+        <%= link_to  "Accept", friendship_path(request), method: :put %>
+        <%= link_to  "Ignore", friendship_path(request), method: :delete %><br>
+    <% end %>
+    <% end %>
+    <% if !current_user.friend_requests.any? %>
+        <p>You don't have any friend requests</p>
+    <% end %>
+<h1>Friend List</h1>
+<% if current_user.friends.any? %>
+    <% current_user.friends.each do |f| %>
+        <ul>
+            <li><%= link_to  f.full_name, user_path(f) %></li>
+        </ul>
+    <% end %>
+<% else %>
+    <p>You don't have any friends yet</p>
+<% end %>
