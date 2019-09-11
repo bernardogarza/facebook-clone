@@ -1,5 +1,6 @@
 <% post.comments.each do |comment| %>
     <% if comment.user %>
+    <%= image_tag comment.user.gravatar_url %>
         <%= link_to  comment.user.full_name, user_path(comment.user) %>:
         <%= comment.body %><br>
         Commented <%= time_ago_in_words(comment.created_at) %> ago.<br><br>

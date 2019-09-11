@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  include Gravtastic
+  gravtastic :size => 40
+
   before_save :downcase_email
 
   # Include default devise modules. Others available are:
