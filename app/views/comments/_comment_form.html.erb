@@ -4,7 +4,7 @@
     <% end %>
     <%= form_for(post.comments.build, url: post_comments_path(post)) do |f| %>
         <div id="comment_form">
-            <div class="field column is-half">
+            <div class="field column is-half" style="padding-left: 0px;margin-bottom: 0px;padding-bottom: 0px;">
                 <br><p class="control"><%= f.text_area :body, placeholder: 'Put your comment...', class: "textarea has-fixed-size" %><br></p>
             </div>
             <div class="field">
