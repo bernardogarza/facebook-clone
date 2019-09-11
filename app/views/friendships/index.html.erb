@@ -1,7 +1,7 @@
 <div class="container">
     <div class="notification">
         <% if flash[:message] %>
-            <%= flash[:message] %>
+            <p class="notice"><%= flash[:message] %></p>
         <% end %>
         <h1 class="title">Friend Requests</h1>
         <%  @friend_requests.each do |request| %>
