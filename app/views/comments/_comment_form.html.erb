@@ -1,9 +1,15 @@
-<div id="comment_form">
-    <%= form_for(post.comments.build, url: post_comments_path(post)) do |f| %>
-        <%= f.text_area :body, placeholder: 'Put your comment...' %><br>
-        <%= f.submit 'Comment' %>
+<div class="media-content" style="margin-left: 70px;">
+    <% if post.comments.count == 0 %>
+        <small>This post doesn't have any comments.</small>
     <% end %>
+    <div class="field">
+            <%= form_for(post.comments.build, url: post_comments_path(post)) do |f| %>
+            <br><p class="control"><%= f.text_area :body, placeholder: 'Put your comment...' %><br></p>
+    </div>
+    <div class="field">
+        <p class="control">
+        <%= f.submit 'Comment', class: "button" %>
+        </p>
+            <% end %>
+    </div>
 </div>
-<% if post.comments.count == 0 %>
-    <br>This post doesn't have any comments.
-<% end %>
