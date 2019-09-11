@@ -1,17 +1,14 @@
-<%= form_for @post do |f| %>
-    <p>
-        <%= f.label :body %><br>
-        <%= f.text_area :body %>
-    </p><p>
-        <%= f.submit 'Edit' %>
-    </p>
-    <% if @post.errors.any? %>
-    <div id="errors">
-        <ul>
-            <% @post.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-        </ul>
-    </div>
+<% if @post.errors.any? %>
+<div id="errors">
+    <% @post.errors.full_messages.each do |msg| %>
+        <p class="alert"><%= msg %></p>
     <% end %>
+</div>
+<% end %>
+<%= form_for(:post, url: post_path, method: :patch) do |f| %>
+    <div class="control">
+        <%= f.label :body, "Change the post" %>
+        <%= f.text_area :body, class: "textarea has-fixed-size is-primary" %>
+    </div>
+    <%= f.submit 'Edit', class: "button is-primary" %>
 <% end %>
