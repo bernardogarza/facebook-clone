@@ -3,13 +3,15 @@
         <small>This post doesn't have any comments.</small>
     <% end %>
     <%= form_for(post.comments.build, url: post_comments_path(post)) do |f| %>
-        <div class="field column is-half" id="comment_form">
-            <br><p class="control"><%= f.text_area :body, placeholder: 'Put your comment...', class: "textarea has-fixed-size" %><br></p>
-        </div>
-        <div class="field">
-            <p class="control">
-                <%= f.submit 'Comment', class: "button" %>
-            </p>
+        <div id="comment_form">
+            <div class="field column is-half">
+                <br><p class="control"><%= f.text_area :body, placeholder: 'Put your comment...', class: "textarea has-fixed-size" %><br></p>
+            </div>
+            <div class="field">
+                <p class="control">
+                    <%= f.submit 'Comment', class: "button" %>
+                </p>
+            </div>
         </div>
     <% end %>
 </div>
