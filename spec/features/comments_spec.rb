@@ -29,7 +29,7 @@ RSpec.feature 'Comments', type: :feature do
       create_post
       within('#comment_form') do
         fill_in 'comment_body', with: 'This is a comment'
-        click_button 'Comment'
+        click_on 'Comment'
       end
     end
 

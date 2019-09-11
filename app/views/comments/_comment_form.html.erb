@@ -1,15 +1,15 @@
-<div class="media-content" style="margin-left: 70px;">
+<div class="media-content", style="margin-left: 70px;">
     <% if post.comments.count == 0 %>
         <small>This post doesn't have any comments.</small>
     <% end %>
-    <div class="field column is-half">
-            <%= form_for(post.comments.build, url: post_comments_path(post)) do |f| %>
+    <%= form_for(post.comments.build, url: post_comments_path(post)) do |f| %>
+        <div class="field column is-half" id="comment_form">
             <br><p class="control"><%= f.text_area :body, placeholder: 'Put your comment...', class: "textarea has-fixed-size" %><br></p>
-    </div>
-    <div class="field">
-        <p class="control">
-        <%= f.submit 'Comment', class: "button" %>
-        </p>
-            <% end %>
-    </div>
+        </div>
+        <div class="field">
+            <p class="control">
+                <%= f.submit 'Comment', class: "button" %>
+            </p>
+        </div>
+    <% end %>
 </div>

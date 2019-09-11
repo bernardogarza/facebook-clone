@@ -28,7 +28,7 @@ def friend_request(user)
     if Friendship.find_by(user: user, friend: random_user, confirmed: true) || Friendship.find_by(user: random_user, friend: user, confirmed: true)
         friend_request(random_user)
     else
-        user.friendships.create!( friend: random_user, confirmed: true )
+        user.friendships.create!( friend: random_user, confirmed: rand(0..1) )
     end
 end
 
