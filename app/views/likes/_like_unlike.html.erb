@@ -4,5 +4,5 @@
     <%= link_to  "Like", post_likes_path(post), method: :post %><br>
 <% end %>
 <% if post.likes.count > 0 %>
-    <b><%= pluralize(post.likes.count, "person") %> likes this post</b>  
+    <b><small><%= pluralize(post.likes.count, "person") %> likes this post</small></b>
 <% end %>

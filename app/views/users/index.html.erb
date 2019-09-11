@@ -1,6 +1,27 @@
-<h1>Users</h1>
+<div class="container">
+    <div class="notification">
+        <h1 class="title">Users</h1>
+    </div>
+</div>
 <% @users.each do |user| %>
-    <% unless user == current_user %>
-        <%= link_to  "#{user.full_name}", user_path(user) %><br>
-    <% end %>
+    <div class="container">
+        <div class="notification">
+            <div class="media">
+                <% unless user == current_user %>
+                    <div class="media-left">
+                        <p class="image is-48x48">
+                            <%= image_tag user.gravatar_url %>
+                        </p>
+                    </div>
+                    <div class="media-content">
+                        <div class="content">
+                            <p style="margin-top: 9px">
+                                <%= link_to  "#{user.full_name}", user_path(user) %>
+                            </p>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
 <% end %>

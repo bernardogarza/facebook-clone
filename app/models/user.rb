@@ -1,11 +1,16 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
+  include Gravtastic
+  gravtastic
+
   before_save :downcase_email
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  devise :omniauthable, omniauth_providers: %i[facebook]
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -44,6 +49,19 @@ class User < ApplicationRecord
 
   def friend?(user)
     friends.include?(user)
+  end
+
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0, 20]
+      user.password_confirmation = user.password
+      user.first_name = auth.info.name.split.first
+      user.last_name = auth.info.name.split.last
+      user.save!
+    end
   end
 
   private

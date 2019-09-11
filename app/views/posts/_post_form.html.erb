@@ -1,11 +1,11 @@
-<%= form_for(:post, url: posts_path) do |f| %>
-    <%= f.text_area :body %><br>
-    <%= f.submit 'Post' %>
-<% end %>
 <% if flash[:error] %>
-    <ul>
-        <% flash[:error].each do |error| %>
-            <li><%= error %></li>
-        <% end %>
-    </ul>
+    <% flash[:error].each do |error| %>
+        <p class="alert"><%= error %></p>
+    <% end %>
+<% end %>
+<%= form_for(:post, url: posts_path) do |f| %>
+    <div class="control">
+        <%= f.text_area :body, class: "textarea has-fixed-size is-primary" %><br>
+    </div>
+    <%= f.submit 'Post', class: "button is-primary" %>
 <% end %>

@@ -1,0 +1,15 @@
+.notice {
+    color: rgb(41, 41, 41);
+    background-color: rgba(11, 0, 109, 0.274);
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+}
+
+.alert {
+    color: rgb(41, 41, 41);
+    background-color: rgba(255, 0, 0, 0.397);
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+}
