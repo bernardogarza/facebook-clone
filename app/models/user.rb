@@ -2,7 +2,7 @@
 
 class User < ApplicationRecord
   include Gravtastic
-  gravtastic :size => 40
+  gravtastic
 
   before_save :downcase_email
 
