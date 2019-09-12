@@ -30,6 +30,12 @@ Next, migrate the database:
 $ rails db:migrate
 ```
 
+Next, create the fake users:
+
+```
+$ rails db:seed
+```
+
 Ready to run the app in a local server:
 
 ```
