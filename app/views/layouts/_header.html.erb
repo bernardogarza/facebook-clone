@@ -1,0 +1,17 @@
+<nav class="navbar has-background-link is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <p class="navbar-item"><b><%= link_to  "Facebook", root_url, class: "navbar-item has-text-white"%></b></p>
+    </div>
+    <% if user_signed_in? %>
+    <div id="navbarBasicExample" class="navbar-menu navbar-hover">
+        <%= link_to  "Users", users_path, class: "navbar-item has-text-white" %>
+        <%= link_to  "My Profile", user_path(current_user), class: "navbar-item has-text-white" %>
+        <%= link_to  "Friends / Requests (#{current_user.friend_requests.count})", friendships_path, class: "navbar-item has-text-white" %> 
+    </div>
+    <div class="navbar-end">
+        <div class="navbar-item">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navbar-item is-danger is-hovered" %>
+        </div>
+    </div>
+    <% end %>
+</nav>

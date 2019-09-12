@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bulma";
+
+ a.navbar-item:hover{
+     background-color: #2e66c0;
+ }
