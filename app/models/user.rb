@@ -9,8 +9,8 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
-  devise :omniauthable, omniauth_providers: %i[facebook]
+         :recoverable, :rememberable, :validatable,
+         :omniauthable, omniauth_providers: %i[facebook]
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -60,6 +60,7 @@ class User < ApplicationRecord
       user.password_confirmation = user.password
       user.first_name = auth.info.name.split.first
       user.last_name = auth.info.name.split.last
+      user.save!
     end
   end
 
