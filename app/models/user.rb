@@ -52,13 +52,15 @@ class User < ApplicationRecord
   end
 
   def self.from_omniauth(auth)
-    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+    where(auth.slice(:provider, :uid)).first_or_create.tap do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
       user.password_confirmation = user.password
       user.first_name = auth.info.name.split.first
       user.last_name = auth.info.name.split.last
-      user.skip_confirmation!
+      user.save!
     end
   end
 
