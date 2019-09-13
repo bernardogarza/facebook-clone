@@ -60,7 +60,6 @@ class User < ApplicationRecord
       user.password_confirmation = user.password
       user.first_name = auth.info.name.split.first
       user.last_name = auth.info.name.split.last
-      user.save!
     end
   end
 
