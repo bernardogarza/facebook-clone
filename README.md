@@ -4,7 +4,7 @@ This is the sample application for Microverse main curriculum
 
 You can test the app in the following link:
 
-https://damp-reaches-23631.herokuapp.com
+https://microverse-facebook-clone.herokuapp.com/users/sign_in
 
 ## Authors
 Bernardo Garza Landa - bernardo.g.landa@gmail.com
