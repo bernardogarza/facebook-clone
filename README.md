@@ -1,12 +1,7 @@
 # Facebook Clone
 
-This is the sample application for Microverse main curriculum
+This project was created using Ruby on Rails and PostgreSQL, it's a facebook clone where you can add freidns, write posts, comment and like other user's posts. We used Omniauth for facebook authentication and Devise for regular authentication.
 
-
-
-## Live Demo
-
-https://microverse-facebook-clone.herokuapp.com/users/sign_in
 
 ## Authors
 **[Bernardo Garza Landa](https://github.com/bernardogarza)** - bernardo.g.landa@gmail.com
@@ -14,7 +9,17 @@ https://microverse-facebook-clone.herokuapp.com/users/sign_in
 
 **[Kalib Hackin](naguihw@gmail.com)** - naguihw@gmail.com
 
-#
+
+## Live Demo
+
+https://microverse-facebook-clone.herokuapp.com/users/sign_in
+
+
+## Screenshot
+
+
+![Facebook Clone](screenshot.png?raw=true "Facebook Clone")
+
 
 
 
