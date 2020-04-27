@@ -4,7 +4,7 @@ This project was created using Ruby on Rails and PostgreSQL, it's a Facebook clo
 
 
 ## Authors
-**[Bernardo Garza Landa](https://github.com/bernardogarza)** - bernardo.g.landa@gmail.com
+**[Bernardo Garza Landa](https://bernardogarza.me/)** - bernardo.g.landa@gmail.com
 
 
 **[Kalib Hackin](naguihw@gmail.com)** - naguihw@gmail.com
