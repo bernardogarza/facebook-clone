@@ -19,6 +19,7 @@ https://microverse-facebook-clone.herokuapp.com/users/sign_in
 
 
 ![Facebook Clone](screenshot.png?raw=true "Facebook Clone")
+![Facebook Clone](screenshot2?raw=true "Facebook Clone")
 
 
 
