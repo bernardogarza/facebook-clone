@@ -43,7 +43,7 @@ bundle exec rspec
 ```
 
 ## Future features
-- AAdd better styling
+- Add better styling
 - Implement chat
 
 ## Built with
