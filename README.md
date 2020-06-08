@@ -1,6 +1,6 @@
 # Facebook Clone
 
-This project was created using Ruby on Rails and PostgreSQL, it's a Facebook clone where you can add friends, write posts, comment and like other user's posts. We used Omniauth for Facebook authentication and Devise for regular authentication.
+This project was created using Ruby on Rails and PostgreSQL. It's a Facebook clone where you can add friends, write posts, comment and like other user's posts. We used Omniauth for Facebook authentication and Devise for regular authentication.
 
 ## Authors
 **[Bernardo Garza Landa](https://bernardogarza.me/)** - bernardo.g.landa@gmail.com - [Portfolio](https://bernardogarza.me) - [LinkedIn](https://www.linkedin.com/in/bernardo-g-landa/)
