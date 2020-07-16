@@ -11,7 +11,7 @@ This project was created using Ruby on Rails and PostgreSQL. It's a Facebook clo
 https://microverse-facebook-clone.herokuapp.com/users/sign_in
 
 ## Screenshot
-![Facebook Clone](screenshot.png?raw=true "Facebook Clone")
+
 ![Facebook Clone](screenshot2?raw=true "Facebook Clone")
 
 ## Getting started
